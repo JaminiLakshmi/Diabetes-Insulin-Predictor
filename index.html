@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Predictor</title>
+    <style>
+
+.login {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input.form-input {
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            color: #f75555;
+            border: 1px solid #19e5db;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        input.form-input:focus {
+            border-color: #4a77d4;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4a77d4;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #6eb6de;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body bgcolor="#84aef1">
+<div class="login">
+    <h1>Diabetes Predictor</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+        <input class="form-input" type="text" name="pregnancies" placeholder="Number of Pregnancies eg. 0"><br>
+        <input class="form-input" type="text" name="glucose" placeholder="Glucose (mg/dL) eg. 80"><br>
+        <input class="form-input" type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 80"><br>
+        <input class="form-input" type="text" name="skinthickness" placeholder="Skin Thickness (mm) eg. 20"><br>
+        <input class="form-input" type="text" name="insulin" placeholder="Insulin Level (IU/mL) eg. 80"><br>
+        <input class="form-input" type="text" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 23.1"><br>
+        <input class="form-input" type="text" name="dpf" placeholder="Diabetes Pedigree Function eg. 0.52"><br>
+        <input class="form-input" type="text" name="age" placeholder="Age (years) eg. 34"><br>
+        <button type="submit" class="btn">Predict</button>
+    </form>
+    <div class="prediction">
+    </div>
+</div>
+</body>
+</html>
